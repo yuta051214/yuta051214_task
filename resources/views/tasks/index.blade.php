@@ -11,8 +11,14 @@
     <div class='index'>
         <h1>タスク一覧</h1>
         @foreach ($tasks as $task)
-            <a href="tasks/{{ $task->id }}">{{ $task->title }}</a>
-            <button onclick="location.href='/tasks/destroy'">削除する</button><br>
+            <div class="index-item">
+                <a href="tasks/{{ $task->id }}">{{ $task->title }}</a>
+                <form action="/tasks/{{ $task->id }}" method="post" class="index-item-delete-button">
+                    @csrf
+                    @method("DELETE")
+                    <input type="submit" value="削除する">
+                </form>
+            </div>
         @endforeach
     </div>
 
