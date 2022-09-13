@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+.body{
+    width: 300px;
+    height: 100px;
+}
+
+.index {
+    border-bottom: solid 2px gray;
+    padding-bottom: 10px;
+}
+
+label {
+    display: block;
+}
+
+.button-group {
+    display: flex;
+}
+
+.botton-group > *:not(:last-child) {
+    margin-right: 10px;
+}
+
+.error {
+    color: red;
+}
